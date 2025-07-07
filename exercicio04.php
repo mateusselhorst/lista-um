@@ -8,17 +8,16 @@
 </head>
 
 <body>
-    <h1>Fatorial</h1>
 
     <form method="POST" action="">
-        <label for="fatorial">Digite um número para descobrir seu FATORIAL:</label>
+        <label for="fatorial">Informe um número para descobrir o seu fatorial</label>
         <input type="number" id="fatorial" name="fatorial" required>
-        <button type="submit" name="verificar_fatorial">Verificar</button>
+        <button type="submit" name="verificar_numero">Verificar</button>
     </form>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['verificar_fatorial'])) {
+    if (isset($_POST['verificar_numero'])) {
         $numero = $_POST['fatorial'];
     };
     function loopFatorial($numero) {
@@ -32,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     };
     
-         echo "O fatorial do $numero é: " . loopFatorial($numero) . "\n";
+         echo "Fatorial do $numero é: " . loopFatorial($numero) . "\n";
 };
 ?>
 
