@@ -23,9 +23,9 @@
             $nome = $_POST['nome'];
             $idade = $_POST['idade'];
         };
-        if($idade < 17){
+        if($idade <= 15){
             echo 'Não pode votar';
-        }else if($idade > 17){
+        }else if($idade >= 16){
             echo 'Pode votar';
         }
     };
