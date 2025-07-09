@@ -13,6 +13,7 @@
         <input type="number" id="numero_impar" name="numero_impar" required>
         <button type="submit" name="verificar_numero">Verificar</button>
     </form>
+    
 <?php
 
 function verificarImpar($numero)

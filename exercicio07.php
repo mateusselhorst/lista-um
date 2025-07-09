@@ -4,41 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divisor</title>
+    <title>Número Perfeito</title>
 </head>
 
 <body>
     <form method="POST" action="">
-        <label for="divisor">Informe um número para descobrir qual o número perfeito</label>
-        <input type="number" id="divisor" name="divisor" required>
-        <button type="submit" name="verificar_divisor">Verificar</button>
+        <label for="perfeito">Informe um número para descobrir se é um número perfeito</label>
+        <input type="number" id="perfeito" name="perfeito" required>
+        <button type="submit" name="verificar_perfeito">Verificar</button>
     </form>
 
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['verificar_divisor'])) {
-        $numero = $_POST['divisor'];
+    if (isset($_POST['verificar_perfeito'])) {
+        $numero = $_POST['perfeito'];
     };
-    function numeroPerfeito($numero)
+    function perfeitoNumero($numero)
     {
         if ($numero <= 1) {
             return false;
         };
 
-        $divisores = 1;
+        $divisor = 1;
         for ($i = 2; $i <= sqrt($numero); $i++) {
             if ($numero % $i == 0) {
-                $divisores += $i;
+                $divisor += $i;
                 if ($i != $numero / $i) {
-                    $divisores += $numero / $i;
+                    $divisor += $numero / $i;
                 };
             };
         };
-        return $divisores == $numero;
+        return $divisor == $numero;
     };
 
-    if (numeroPerfeito($numero)) {
+    if (perfeitoNumero($numero)) {
         echo "$numero é um número perfeito.";
     } else {
         echo "$numero não é um número perfeito.";
