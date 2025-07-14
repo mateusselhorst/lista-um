@@ -27,7 +27,7 @@
         };
         if(($numero1) && ($numero2)){
             $soma = $numero1 + $numero2;
-            echo "<p> A soma dos números entre $numero1 e $numero2 é: $soma</p>";
+            echo "<p> A soma dos números $numero1 e $numero2 é: $soma</p>";
         }
     };
 
